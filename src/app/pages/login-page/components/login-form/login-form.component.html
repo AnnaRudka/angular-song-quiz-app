@@ -1,0 +1,39 @@
+<div class="login-content__form">
+  <h2 class="login-content__title">Welcome!</h2>
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div>
+      <label for="name">Please enter your name and let's start our quiz!</label>
+      <input
+        formControlName="name"
+        id="name"
+        placeholder="TYPE YOUR NAME HERE..."
+        type="text"
+        name="name"
+      />
+
+      <ng-container
+        *ngIf="
+          nameControl?.invalid && (nameControl?.dirty || nameControl?.touched)
+        "
+      >
+        <div *ngIf="nameControl?.errors?.['required']">Name is required</div>
+        <div *ngIf="nameControl?.errors?.['minlength']">
+          Name must be at least
+          {{nameControl?.errors?.['minlength'].requiredLength}} characters long
+        </div>
+        <div *ngIf="nameControl?.errors?.['maxlength']">
+          Name must be up to
+          {{nameControl?.errors?.['maxlength'].requiredLength}} characters long
+        </div>
+      </ng-container>
+    </div>
+    <div>
+      <app-button [disabled]="loginForm.invalid">
+        START QUIZE &#10140;
+      </app-button>
+    </div>
+  </form>
+</div>

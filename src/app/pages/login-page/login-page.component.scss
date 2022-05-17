@@ -1,0 +1,13 @@
+:host {
+    display: block;
+}
+.login-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // position: relative;
+    &__logo{
+        margin: 90px auto;
+    }
+}

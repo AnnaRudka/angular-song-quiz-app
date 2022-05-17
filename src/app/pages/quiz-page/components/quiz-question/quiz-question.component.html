@@ -1,0 +1,33 @@
+<div class="question-block">
+  <div class="question">
+    <h1 class="question__title">{{ question.genre | uppercase }} SONG</h1>
+    <p class="question__text">
+      Listen to the audio guess what song is it from the list
+    </p>
+    <div class="question__audio">
+      <div class="question__audio-image">
+        <img *ngIf="isSuccess" src="{{ apiUrl }}/{{ correctAnswer.image }}" alt="{{ correctAnswer.name }}">
+      </div>
+      <audio controls src="{{ apiUrl }}/{{ correctAnswer.audio }}"></audio>
+      <!-- Audio player: {{ correctAnswer.name }} -->
+    </div>
+    <div class="question__answers">
+      <app-quiz-answer-button
+        *ngFor="let answer of question.data; let i = index"
+        [answer]="answer"
+        [i]="i"
+        [status]="status[answer.id]"
+        (onClick)="onAswerClick(answer, i)"
+      ></app-quiz-answer-button>
+    </div>
+  </div>
+  <app-quiz-description
+    *ngIf="question.data[clickedIndex]; else defaultBlock"
+    [answer]="question.data[clickedIndex]"
+  ></app-quiz-description>
+  <ng-template #defaultBlock>
+    <div class="default-block">
+      <img class="default-block__image" src="./assets/images/union.png" alt="bgr">
+    </div>
+  </ng-template>
+</div>

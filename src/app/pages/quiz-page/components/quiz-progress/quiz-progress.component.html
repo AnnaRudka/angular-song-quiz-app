@@ -1,0 +1,31 @@
+<div class="progress">
+  <div class="progress-container">
+    <div class="progress-bar progress-bar--active" [ngStyle]="{'width': (active + 1)*33.3 + '%'}"></div>
+    <div class="progress-bar progress-bar--completed" [ngStyle]="{'width': active*33.3 + '%'}"></div>
+  </div>
+  <div class="progress-nav">
+    <ul class="progress-nav__list">
+      <ng-container *ngFor="let item of data; let i = index">
+        <li
+          [ngClass]="{
+            'progress-nav__list-item--active': active === i,
+            'progress-nav__list-item--completed': active > i
+          }"
+          class="progress-nav__list-item"
+        >
+          {{ item.genre | uppercase }}
+        </li>
+        <li
+          *ngIf="data.length - i > 1"
+          [ngClass]="{
+            'progress-nav__list-item--active': active === i,
+            'progress-nav__list-item--completed': active > i
+          }"
+          class="progress-nav__list-item"
+        >
+          ➜
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

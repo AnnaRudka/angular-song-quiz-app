@@ -1,0 +1,10 @@
+:host {
+    display: block;
+}
+
+.logo {
+    width: 140px;
+    &-image{
+        width: 100%;
+    }
+}

@@ -1,0 +1,21 @@
+.btn {
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #7e55b3 -0.37%, #a769c4 100.37%);
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: (--text-font-size);
+  text-align: center;
+  line-height: 1.25rem;
+  color: var(--color-text);
+  border: none;
+  &:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      linear-gradient(90deg, #7e55b3 -0.37%, #a769c4 100.37%);
+    border: none;
+  }
+  &:disabled {
+    background: linear-gradient(90deg, #808080 -0.37%, #656565 100.37%);
+    border: none;
+  }
+}
