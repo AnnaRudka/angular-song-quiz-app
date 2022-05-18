@@ -11,7 +11,7 @@ import { QuizQuestionComponent } from './components/quiz-question/quiz-question.
 import { QuizDescriptionComponent } from './components/quiz-description/quiz-description.component';
 import { QuizAnswerOptionComponent } from './components/quiz-answer-option/quiz-answer-option.component';
 import { QuizHeaderComponent } from './components/quiz-header/quiz-header.component';
-import { QuizLoaderComponent } from './componenеts/quiz-loader/quiz-loader.component';
+import { QuizLoaderComponent } from './components/quiz-loader/quiz-loader.component';
 
 
 @NgModule({

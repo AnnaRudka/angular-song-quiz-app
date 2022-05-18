@@ -1,9 +1,9 @@
-<div class="container">
+<app-quiz-loader *ngIf="isLoading$ | async">Loading...</app-quiz-loader>
+<div *ngIf="!!data.length" class="container">
   <app-quiz-header></app-quiz-header>
   <main>
     <app-quiz-progress [data]="data" [active]="activeIndex"></app-quiz-progress>
-    <p *ngIf="isLoading$ | async">Loading...</p>
-    <app-quiz-question *ngIf="!!data.length" [question]="activeQuestion"></app-quiz-question>
+    <app-quiz-question  [question]="activeQuestion"></app-quiz-question>
   </main>
   <footer class="footer">
     <app-button
