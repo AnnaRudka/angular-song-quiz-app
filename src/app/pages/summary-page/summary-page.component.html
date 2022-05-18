@@ -1,1 +1,29 @@
-<p>summary-page works!</p>
+<div class="container">
+  <div class="logo-container">
+    <app-logo></app-logo>
+  </div>
+  <div class="score">
+    <div class="score__image">
+      <img src="./assets/images/union.png" alt="bgr" />
+    </div>
+    <div class="score__result">{{ totalScore }}</div>
+    <div class="score__summary">
+      <ng-container
+        *ngIf="scoreService.getTotalScore() !== maxScore; else defaultBlock"
+      >
+        <h1>{{ user.name }}, you can do better, try again!</h1>
+        <p class="score__summary-text">
+          You've got {{ totalScore }} out of 12 points.
+        </p>
+      </ng-container>
+      <ng-template #defaultBlock>
+        <h1>{{ user.name }}, did so great!</h1>
+        <p class="score__summary-text">
+          You've got {{ totalScore }} out of 12 points. You
+          are definitely a music lover!
+        </p>
+      </ng-template>
+      <app-button (click)="onTryAgainClick()"> TRY AGAIN ➜ </app-button>
+    </div>
+  </div>
+</div>

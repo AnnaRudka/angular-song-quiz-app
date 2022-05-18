@@ -9,7 +9,7 @@
         <li
           [ngClass]="{
             'progress-nav__list-item--active': active === i,
-            'progress-nav__list-item--completed': active > i
+            'progress-nav__list-item--completed': scoreService.getScore(i) !== undefined
           }"
           class="progress-nav__list-item"
         >

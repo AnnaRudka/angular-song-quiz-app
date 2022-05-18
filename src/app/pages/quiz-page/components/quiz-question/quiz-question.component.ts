@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { Answer } from 'src/app/shared/models/answer.model';
 import { Question } from 'src/app/shared/models/question.model';
-import { ScoreService } from 'src/app/shared/services/score.service';
+import { ScoreService } from 'src/app/shared/services/score/score.service';
 import { API_URL } from 'src/app/constants';
 
 const OPTIONS_COUNT = 4;
@@ -39,6 +39,7 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
     if ( !!this.question.data.length &&
       changes['question'].currentValue !== changes['question'].previousValue
     ) {
+      this.clickedIndex = -1;
       this.status = {};
       this.correctIndex = Math.floor(Math.random() * OPTIONS_COUNT);
       this.correctAnswer = this.question.data[this.correctIndex];

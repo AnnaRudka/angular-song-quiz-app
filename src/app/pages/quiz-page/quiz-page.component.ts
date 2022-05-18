@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Question } from 'src/app/shared/models/question.model';
-import { ScoreService } from 'src/app/shared/services/score.service';
-import data from '../../shared/mock/data.json';
-import { LocalStoreService } from 'src/app/shared/services/localStore/local-store.service';
 import { QuestionService } from 'src/app/shared/services/questions/question.service';
+import { Router } from '@angular/router';
+import { ScoreService } from 'src/app/shared/services/score/score.service';
 import { Observable } from 'rxjs';
-
-const USER_KEY = 'USER';
 
 @Component({
   selector: 'app-quiz-page',
@@ -14,23 +11,24 @@ const USER_KEY = 'USER';
   styleUrls: ['./quiz-page.component.scss'],
 })
 export class QuizPageComponent implements OnInit {
-  user = this.localStoreService.loadState(USER_KEY);
   data: Question[] = [];
   activeIndex: number = 0;
   activeQuestion: Question = {
     id: '',
     genre: '',
-    data: []
+    data: [],
   };
   disabled: boolean = true;
+  isLoading$!: Observable<boolean>;
 
   constructor(
     public scoreService: ScoreService,
-    private localStoreService: LocalStoreService,
-    private questionService: QuestionService
+    private questionService: QuestionService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.isLoading$ = this.questionService.isLoading$;
     this.questionService.getQuestions().subscribe((data) => {
       this.data = data;
       this.activeQuestion = this.data[this.activeIndex];
@@ -40,5 +38,9 @@ export class QuizPageComponent implements OnInit {
   onNextClick() {
     this.activeIndex += 1;
     this.activeQuestion = this.data[this.activeIndex];
+  }
+
+  onScoreClick() {
+    this.router.navigate(['/summary']);
   }
 }

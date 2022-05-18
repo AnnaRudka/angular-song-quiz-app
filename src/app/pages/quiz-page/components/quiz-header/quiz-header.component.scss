@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 29px 0;
+  &-user {
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    padding-left: 15px;
+    &__name {
+      font-weight: 700;
+      padding-right: 10px;
+    }
+    &__score {
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+  }
+}

@@ -1,27 +1,22 @@
 <div class="container">
-  <header class="header">
-    <app-logo></app-logo>
-    <div class="header-user">
-      <ng-container *ngIf="user">
-        <span class="header-user__name">{{ user.name | uppercase }}</span>
-      </ng-container>
-
-      <span class="header-user__score"
-        >Your Score: {{ scoreService.getTotalScore() }}</span
-      >
-    </div>
-  </header>
+  <app-quiz-header></app-quiz-header>
   <main>
     <app-quiz-progress [data]="data" [active]="activeIndex"></app-quiz-progress>
-    <app-quiz-question [question]="activeQuestion"></app-quiz-question>
+    <p *ngIf="isLoading$ | async">Loading...</p>
+    <app-quiz-question *ngIf="!!data.length" [question]="activeQuestion"></app-quiz-question>
   </main>
   <footer class="footer">
     <app-button
+    *ngIf="data.length === activeIndex + 1"
+      (click)="onScoreClick()"
+      [disabled]="scoreService.getScore(activeIndex) === undefined"
+      >SEE MY SCORE ➜</app-button
+    >
+    <app-button
+    *ngIf="data.length !== activeIndex + 1"
       (click)="onNextClick()"
       [disabled]="scoreService.getScore(activeIndex) === undefined"
-      >{{
-        data.length === activeIndex + 1 ? "SEE MY SCORE ➜" : "NEXT QUESTION ➜"
-      }}</app-button
+      >NEXT QUESTION ➜</app-button
     >
   </footer>
 </div>

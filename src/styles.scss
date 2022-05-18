@@ -22,12 +22,9 @@ ul[class],
 ol[class] {
   list-style: none;
 }
-img {
-  max-width: 100%;
-  display: block;
-}
 
-body, html {
+body,
+html {
   height: 100%;
   background-color: black;
   font-family: var(--font-primary);
@@ -46,6 +43,17 @@ span {
   padding: 0;
 }
 
+h1 {
+  font-family: var(--font-secondary);
+  font-size: 30px;
+  font-weight: 700;
+  @media (max-width: 768px) {
+    font-size: 26px;
+  }
+  @media (max-width: 576px) {
+    font-size: 20px;
+  }
+}
 .container {
   width: 100%;
   padding-right: 0.75rem;

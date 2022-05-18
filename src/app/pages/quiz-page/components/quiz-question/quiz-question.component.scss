@@ -24,14 +24,6 @@
     width: 100%;
     padding-right: 0;
   }
-  &__title {
-    font-family: var(--font-secondary);
-    font-size: 30px;
-    font-weight: 700;
-    @media (max-width: 768px) {
-      font-size: 26px;
-    }
-  }
   &__text {
     font-weight: 400;
     font-size: 16px;
@@ -54,10 +46,20 @@
     width: 114px;
     height: 114px;
     border-radius: 5px;
-    background: linear-gradient(148.42deg, #EC1919 -0.53%, #D1C234 28.02%, #D134A5 60.47%, #3734D1 90.32%, #23B632 124.06%);
+    background: linear-gradient(
+      148.42deg,
+      #ec1919 -0.53%,
+      #d1c234 28.02%,
+      #d134a5 60.47%,
+      #3734d1 90.32%,
+      #23b632 124.06%
+    );
   }
   & img {
+    border-radius: 5px;
+    max-width: 100%;
     object-fit: fill;
+    height: 114px;
   }
 }
 .default-block {

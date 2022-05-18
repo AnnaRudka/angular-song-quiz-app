@@ -1,10 +1,9 @@
 <div
   class="question__answer"
-  (click)="onAswerClick()"
   [ngClass]="['question__answer--' + (status || 'none')]"
 >
   <div class="question__answer-indicator"></div>
   <div class="question__answer-song">
-    <p>0{{ i + 1 }}: {{ answer.name }} - {{ answer.songTitle }}</p>
+    <p><ng-content></ng-content>></p>
   </div>
 </div>

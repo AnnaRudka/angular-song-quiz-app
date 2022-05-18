@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Question } from 'src/app/shared/models/question.model';
+import { ScoreService } from 'src/app/shared/services/score/score.service';
 
 @Component({
   selector: 'app-quiz-progress',
@@ -6,9 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./quiz-progress.component.scss']
 })
 export class QuizProgressComponent implements OnInit {
-  @Input() data!: any[];
+  @Input() data!: Question[];
   @Input() active!: number;
-  constructor() { }
+
+  constructor(public scoreService: ScoreService) { }
 
   ngOnInit(): void {
   }

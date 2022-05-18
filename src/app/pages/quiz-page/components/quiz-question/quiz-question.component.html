@@ -6,19 +6,22 @@
     </p>
     <div class="question__audio">
       <div class="question__audio-image">
-        <img *ngIf="isSuccess" src="{{ apiUrl }}/{{ correctAnswer.image }}" alt="{{ correctAnswer.name }}">
+        <img
+          *ngIf="isSuccess"
+          src="{{ apiUrl }}/{{ correctAnswer.image }}"
+          alt="{{ correctAnswer.name }}"
+        />
       </div>
       <audio controls src="{{ apiUrl }}/{{ correctAnswer.audio }}"></audio>
-      <!-- Audio player: {{ correctAnswer.name }} -->
     </div>
     <div class="question__answers">
-      <app-quiz-answer-button
+      <app-quiz-answer-option
         *ngFor="let answer of question.data; let i = index"
-        [answer]="answer"
-        [i]="i"
         [status]="status[answer.id]"
-        (onClick)="onAswerClick(answer, i)"
-      ></app-quiz-answer-button>
+        (click)="onAswerClick(answer, i)"
+      >
+        {{ "0" + (i + 1) + " : " + answer.name + " - " + answer.songTitle }}
+      </app-quiz-answer-option>
     </div>
   </div>
   <app-quiz-description
@@ -27,7 +30,11 @@
   ></app-quiz-description>
   <ng-template #defaultBlock>
     <div class="default-block">
-      <img class="default-block__image" src="./assets/images/union.png" alt="bgr">
+      <img
+        class="default-block__image"
+        src="./assets/images/union.png"
+        alt="bgr"
+      />
     </div>
   </ng-template>
 </div>

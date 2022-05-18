@@ -9,11 +9,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { QuizProgressComponent } from './components/quiz-progress/quiz-progress.component';
 import { QuizQuestionComponent } from './components/quiz-question/quiz-question.component';
 import { QuizDescriptionComponent } from './components/quiz-description/quiz-description.component';
-import { QuizAnswerButtonComponent } from './components/quiz-answer-button/quiz-answer-button.component';
+import { QuizAnswerOptionComponent } from './components/quiz-answer-option/quiz-answer-option.component';
+import { QuizHeaderComponent } from './components/quiz-header/quiz-header.component';
+import { QuizLoaderComponent } from './componenеts/quiz-loader/quiz-loader.component';
 
 
 @NgModule({
-  declarations: [QuizPageComponent, QuizProgressComponent, QuizQuestionComponent, QuizDescriptionComponent, QuizAnswerButtonComponent],
+  declarations: [QuizPageComponent, QuizProgressComponent, QuizQuestionComponent, QuizDescriptionComponent, QuizAnswerOptionComponent, QuizHeaderComponent, QuizLoaderComponent],
   imports: [CommonModule, ReactiveFormsModule, ButtonModule, LogoModule],
   exports: [QuizPageComponent],
 })

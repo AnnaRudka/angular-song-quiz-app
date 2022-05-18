@@ -1,0 +1,12 @@
+<header class="header">
+  <app-logo></app-logo>
+  <div class="header-user">
+    <ng-container *ngIf="user">
+      <span class="header-user__name">{{ user.name | uppercase }}</span>
+    </ng-container>
+
+    <span class="header-user__score"
+      >Your Score: {{ scoreService.getTotalScore() }}</span
+    >
+  </div>
+</header>
