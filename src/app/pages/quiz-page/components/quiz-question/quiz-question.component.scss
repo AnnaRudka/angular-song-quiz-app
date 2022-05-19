@@ -41,12 +41,23 @@
     margin: 30px 0px;
     padding: 20px;
     display: flex;
+    @media (max-width: 576px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+    }
   }
   &__audio-image {
+    flex-shrink: 0;
     width: 114px;
     height: 114px;
     border-radius: 5px;
-    background: linear-gradient(
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &--default {
+      background: linear-gradient(
       148.42deg,
       #ec1919 -0.53%,
       #d1c234 28.02%,
@@ -54,12 +65,15 @@
       #3734d1 90.32%,
       #23b632 124.06%
     );
+    }
   }
-  & img {
-    border-radius: 5px;
-    max-width: 100%;
-    object-fit: fill;
-    height: 114px;
+  &__audio-player {
+    padding-left: 15px;
+    margin-top: 45px;
+    @media (max-width: 576px) {
+      padding-left: 0;
+      margin-top: 10px;
+    }
   }
 }
 .default-block {

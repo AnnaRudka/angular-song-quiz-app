@@ -27,7 +27,7 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
     songTitle: '',
     image: '',
     audio: '',
-    description: ''
+    description: '',
   };
   isSuccess!: boolean;
   status: any = {};
@@ -36,7 +36,8 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
   constructor(private scoreService: ScoreService) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if ( !!this.question.data.length &&
+    if (
+      !!this.question.data.length &&
       changes['question'].currentValue !== changes['question'].previousValue
     ) {
       this.clickedIndex = -1;

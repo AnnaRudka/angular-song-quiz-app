@@ -5,14 +5,23 @@
       Listen to the audio guess what song is it from the list
     </p>
     <div class="question__audio">
-      <div class="question__audio-image">
-        <img
-          *ngIf="isSuccess"
-          src="{{ apiUrl }}/{{ correctAnswer.image }}"
-          alt="{{ correctAnswer.name }}"
-        />
-      </div>
-      <audio controls src="{{ apiUrl }}/{{ correctAnswer.audio }}"></audio>
+      <div
+        *ngIf="isSuccess; else defaultBackground"
+        class="question__audio-image"
+        [ngStyle]="{
+          'background-image': isSuccess
+            ? 'url(' + apiUrl + '/' + correctAnswer.image + ')'
+            : 'none'
+        }"
+      ></div>
+      <ng-template #defaultBackground
+        ><div class="question__audio-image question__audio-image--default"></div
+      ></ng-template>
+      <audio
+        class="question__audio-player"
+        controls
+        src="{{ apiUrl }}/{{ correctAnswer.audio }}"
+      ></audio>
     </div>
     <div class="question__answers">
       <app-quiz-answer-option
