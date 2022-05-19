@@ -1,7 +1,18 @@
 <div class="progress">
   <div class="progress-container">
-    <div class="progress-bar progress-bar--active" [ngStyle]="{'width': (active + 1)*33.3 + '%'}"></div>
-    <div class="progress-bar progress-bar--completed" [ngStyle]="{'width': active*33.3 + '%'}"></div>
+    <div
+      class="progress-bar progress-bar--active"
+      [ngStyle]="{ width: (active + 1) * 30 + '%' }"
+      [ngClass]="{
+        'progress-bar--completed': scoreService.getScore(active) !== undefined,
+        'progress-bar--passed': scoreService.getScore(3) !== undefined,
+        'progress-bar--last': active === 3
+      }"
+    ></div>
+    <div
+      class="progress-bar progress-bar--completed"
+      [ngStyle]="{ width: active * 30 + '%' }"
+    ></div>
   </div>
   <div class="progress-nav">
     <ul class="progress-nav__list">
@@ -9,7 +20,8 @@
         <li
           [ngClass]="{
             'progress-nav__list-item--active': active === i,
-            'progress-nav__list-item--completed': scoreService.getScore(i) !== undefined
+            'progress-nav__list-item--completed':
+              scoreService.getScore(i) !== undefined
           }"
           class="progress-nav__list-item"
         >
@@ -19,7 +31,8 @@
           *ngIf="data.length - i > 1"
           [ngClass]="{
             'progress-nav__list-item--active': active === i,
-            'progress-nav__list-item--completed': active > i
+            'progress-nav__list-item--completed':
+              scoreService.getScore(i) !== undefined
           }"
           class="progress-nav__list-item"
         >

@@ -18,20 +18,26 @@
       background: linear-gradient(
           270.05deg,
           rgba(126, 85, 179, 0) 4.32%,
-          #ffffff 18.98%,
-          #ffffff 99.11%
+          var(--color-text) 18.98%,
+          var(--color-text) 99.11%
         ),
-        rgba(55, 59, 98, 1);
+        transparent;
+    }
+    &--last {
+      background: var(--color-text);
     }
     &--completed {
       z-index: 3;
       background: linear-gradient(
           270.05deg,
           rgba(126, 85, 179, 0) 4.32%,
-          #a769c4 18.98%,
-          #a769c4 99.11%
+          var(--color-violet) 18.98%,
+          var(--color-violet) 99.11%
         ),
-        #ffffff;
+        transparent;
+    }
+    &--passed {
+      background: var(--color-violet);
     }
   }
   &-nav__list {
