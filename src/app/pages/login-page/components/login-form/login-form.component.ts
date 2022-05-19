@@ -6,17 +6,19 @@ import { LoginService } from '../../../../shared/services/login/login.service';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent implements OnInit {
   loginForm = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10),]],
+    name: [
+      '',
+      [Validators.required, Validators.minLength(3), Validators.maxLength(10)],
+    ],
   });
 
   get nameControl() {
     return this.loginForm.get('name');
   }
-
 
   constructor(
     private router: Router,
@@ -30,5 +32,4 @@ export class LoginFormComponent implements OnInit {
     this.loginService.login(this.loginForm.value);
     this.router.navigate(['/quiz']);
   }
-
 }

@@ -3,20 +3,21 @@
   <app-quiz-header></app-quiz-header>
   <main>
     <app-quiz-progress [data]="data" [active]="activeIndex"></app-quiz-progress>
-    <app-quiz-question  [question]="activeQuestion"></app-quiz-question>
+    <app-quiz-question [question]="activeQuestion"></app-quiz-question>
   </main>
   <footer class="footer">
     <app-button
-    *ngIf="data.length === activeIndex + 1"
+      *ngIf="data.length === activeIndex + 1"
       (click)="onScoreClick()"
       [disabled]="scoreService.getScore(activeIndex) === undefined"
       >SEE MY SCORE ➜</app-button
     >
     <app-button
-    *ngIf="data.length !== activeIndex + 1"
+      *ngIf="data.length !== activeIndex + 1"
       (click)="onNextClick()"
       [disabled]="scoreService.getScore(activeIndex) === undefined"
-      >NEXT QUESTION ➜</app-button
+      >NEXT QUESTION  </app-button
     >
   </footer>
 </div>
+<h1 *ngIf="error$ | async as error">{{ error }} ☹</h1>

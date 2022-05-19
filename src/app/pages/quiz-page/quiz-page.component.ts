@@ -20,6 +20,7 @@ export class QuizPageComponent implements OnInit {
   };
   disabled: boolean = true;
   isLoading$!: Observable<boolean>;
+  error$!: Observable<string>;
 
   constructor(
     public scoreService: ScoreService,
@@ -29,6 +30,7 @@ export class QuizPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading$ = this.questionService.isLoading$;
+    this.error$ = this.questionService.error$;
     this.questionService.getQuestions().subscribe((data) => {
       this.data = data;
       this.activeQuestion = this.data[this.activeIndex];

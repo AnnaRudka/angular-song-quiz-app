@@ -6,7 +6,7 @@ import { BehaviorSubject, catchError, EMPTY} from 'rxjs';
   providedIn: 'root'
 })
 
-export class AnsweerService {
+export class AnswerService {
   private _error$ = new BehaviorSubject<string>('');
   error$ = this._error$.asObservable();
 

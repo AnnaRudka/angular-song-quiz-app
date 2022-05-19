@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 import { SummaryPageComponent } from './summary-page.component';
 
@@ -8,7 +10,8 @@ describe('SummaryPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SummaryPageComponent ]
+      declarations: [ SummaryPageComponent ],
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   });
