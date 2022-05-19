@@ -8,7 +8,6 @@ import { LogoModule } from '../../shared/components/logo/logo.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 
-
 @NgModule({
   declarations: [LoginPageComponent, LoginFormComponent],
   imports: [CommonModule, ReactiveFormsModule, ButtonModule, LogoModule],

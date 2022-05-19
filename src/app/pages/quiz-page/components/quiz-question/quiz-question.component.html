@@ -36,6 +36,7 @@
   <app-quiz-description
     *ngIf="question.data[clickedIndex]; else defaultBlock"
     [answer]="question.data[clickedIndex]"
+    [index]="clickedIndex"
   ></app-quiz-description>
   <ng-template #defaultBlock>
     <div class="default-block">

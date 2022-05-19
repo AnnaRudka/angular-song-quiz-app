@@ -1,8 +1,12 @@
 <div class="description">
-  <h2 class="description__title">{{ answer.name }} - {{ answer.songTitle }}</h2>
+  <h2 class="description__title">
+    0{{ index + 1 }}: {{ answer.name }} - {{ answer.songTitle }}
+  </h2>
   <div class="description__image">
     <img src="{{ apiUrl }}/{{ answer.image }}" alt="{{ answer.name }}" />
   </div>
-  <audio controls src="{{ apiUrl }}/{{ answer.audio }}"></audio>
+  <div class="description__audio">
+    <audio controls src="{{ apiUrl }}/{{ answer.audio }}"></audio>
+  </div>
   <p class="description__text">{{ answer.description }}</p>
 </div>

@@ -9,6 +9,7 @@ import { API_URL } from 'src/app/constants';
 })
 export class QuizDescriptionComponent implements OnInit {
   @Input() answer!: Answer;
+  @Input() index!: number;
   apiUrl = API_URL;
 
   constructor() {}
