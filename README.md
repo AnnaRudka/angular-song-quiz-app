@@ -1,6 +1,11 @@
 # AngularSongQuiz
 
+An application to test your knowledge in various music genres. Try to score maximum number of points:
+https://annarudka.github.io/angular-song-quiz-app/quiz
+Good luck!!!
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+
 
 ## Development server
 

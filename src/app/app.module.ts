@@ -3,27 +3,23 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
-
 // Components
 import { AppComponent } from './app.component';
 import { LoginPageModule } from './pages/login-page/login-page.module';
 import { QuizPageModule } from './pages/quiz-page/quiz-page.module';
 import { SummaryPageModule } from './pages/summary-page/summary-page.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LoginPageModule,
     QuizPageModule,
     SummaryPageModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

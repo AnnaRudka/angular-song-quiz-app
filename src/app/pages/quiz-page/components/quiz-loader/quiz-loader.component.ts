@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-quiz-loader',
   templateUrl: './quiz-loader.component.html',
-  styleUrls: ['./quiz-loader.component.scss']
+  styleUrls: ['./quiz-loader.component.scss'],
 })
 export class QuizLoaderComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

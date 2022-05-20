@@ -10,10 +10,9 @@ describe('LoginFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginFormComponent ],
-      imports: [ ReactiveFormsModule, RouterTestingModule],
-    })
-    .compileComponents();
+      declarations: [LoginFormComponent],
+      imports: [ReactiveFormsModule, RouterTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -25,25 +24,25 @@ describe('LoginFormComponent', () => {
   it('should render input elements', () => {
     const compiled = fixture.debugElement.nativeElement;
     const nameInput = compiled.querySelector('input[id="name"]');
-  
+
     expect(nameInput).toBeTruthy();
   });
 
   it('should test form validity', () => {
     const form = component.loginForm;
     expect(form.valid).toBeFalsy();
-  
+
     const nameInput = form.controls['name'];
     nameInput.setValue('Anna');
-  
+
     expect(form.valid).toBeTruthy();
-  })
+  });
 
   it('should test input errors', () => {
     const form = component.loginForm;
     const nameInput = form.controls['name'];
     expect(nameInput?.errors?.['required']).toBeTruthy();
-  
+
     nameInput.setValue('Anna');
     expect(nameInput.errors).toBeNull();
   });

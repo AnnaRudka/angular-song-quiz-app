@@ -13,9 +13,16 @@ import { QuizAnswerOptionComponent } from './components/quiz-answer-option/quiz-
 import { QuizHeaderComponent } from './components/quiz-header/quiz-header.component';
 import { QuizLoaderComponent } from './components/quiz-loader/quiz-loader.component';
 
-
 @NgModule({
-  declarations: [QuizPageComponent, QuizProgressComponent, QuizQuestionComponent, QuizDescriptionComponent, QuizAnswerOptionComponent, QuizHeaderComponent, QuizLoaderComponent],
+  declarations: [
+    QuizPageComponent,
+    QuizProgressComponent,
+    QuizQuestionComponent,
+    QuizDescriptionComponent,
+    QuizAnswerOptionComponent,
+    QuizHeaderComponent,
+    QuizLoaderComponent,
+  ],
   imports: [CommonModule, ReactiveFormsModule, ButtonModule, LogoModule],
   exports: [QuizPageComponent],
 })

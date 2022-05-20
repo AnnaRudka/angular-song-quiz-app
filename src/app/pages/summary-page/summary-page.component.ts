@@ -14,7 +14,7 @@ const MAX_SCORE = 12;
 export class SummaryPageComponent implements OnInit {
   user = this.localStoreService.loadState(USER_KEY);
   maxScore = MAX_SCORE;
-  totalScore =0;
+  totalScore = 0;
 
   constructor(
     public scoreService: ScoreService,

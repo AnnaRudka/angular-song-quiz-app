@@ -7,7 +7,6 @@ import {
 import { QuestionService } from './question.service';
 import { Question } from '../../models/question.model';
 import { API_URL } from 'src/app/constants';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 const questionsMock: Question[] = [
   {
@@ -49,5 +48,4 @@ describe('QuestionService', () => {
 
     req.flush(questionsMock);
   });
-
 });
