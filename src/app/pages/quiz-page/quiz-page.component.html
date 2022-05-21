@@ -10,7 +10,7 @@
       *ngIf="data.length === activeIndex + 1"
       (click)="onScoreClick()"
       [disabled]="scoreService.getScore(activeIndex) === undefined"
-      >SEE MY SCORE ➜</app-button
+      >SEE MY SCORE </app-button
     >
     <app-button
       *ngIf="data.length !== activeIndex + 1"
