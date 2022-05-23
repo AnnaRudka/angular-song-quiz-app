@@ -52,7 +52,7 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
 
   onAswerClick(answer: Answer, index: number) {
     this.clickedIndex = index;
-    if (answer.id === this.correctAnswer.id) {
+    if (answer.id === this.correctAnswer.id && !this.isSuccess) {
       this.status[answer.id] = 'correct';
       this.isSuccess = true;
       this.scoreService.setScore(

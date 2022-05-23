@@ -39,10 +39,7 @@ describe('QuizHeaderComponent', () => {
     component.user = expectedUser;
     const expectedPipedName = expectedUser.name.toUpperCase();
     fixture.detectChanges();
-
-    fixture.whenStable().then(() => {
-      const userEl = elements.getUserName().nativeElement;
-      expect(userEl.textContent).toContain(expectedPipedName);
-    });
+    const userEl = elements.getUserName().nativeElement;
+    expect(userEl.textContent).toContain(expectedPipedName);
   });
 });
