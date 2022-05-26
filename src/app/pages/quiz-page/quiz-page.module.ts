@@ -12,6 +12,9 @@ import { QuizDescriptionComponent } from './components/quiz-description/quiz-des
 import { QuizAnswerOptionComponent } from './components/quiz-answer-option/quiz-answer-option.component';
 import { QuizHeaderComponent } from './components/quiz-header/quiz-header.component';
 import { QuizLoaderComponent } from './components/quiz-loader/quiz-loader.component';
+import { QuizAudioPlayerComponent } from './components/quiz-audio-player/quiz-audio-player.component';
+import { ToggleButtonModule } from '../../shared/components/toggle-button/toggle-button.module';
+import { AudioProgressBarModule } from '../../shared/components/audio-progress-bar/audio-progress-bar.module';
 
 @NgModule({
   declarations: [
@@ -22,8 +25,16 @@ import { QuizLoaderComponent } from './components/quiz-loader/quiz-loader.compon
     QuizAnswerOptionComponent,
     QuizHeaderComponent,
     QuizLoaderComponent,
+    QuizAudioPlayerComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, ButtonModule, LogoModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    LogoModule,
+    AudioProgressBarModule,
+    ToggleButtonModule,
+  ],
   exports: [QuizPageComponent],
 })
 export class QuizPageModule {}

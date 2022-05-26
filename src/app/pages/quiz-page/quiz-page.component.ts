@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Question } from 'src/app/shared/models/question.model';
 import { QuestionService } from 'src/app/shared/services/questions/question.service';
 import { Router } from '@angular/router';
 import { ScoreService } from 'src/app/shared/services/score/score.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-quiz-page',
   templateUrl: './quiz-page.component.html',
   styleUrls: ['./quiz-page.component.scss'],
 })
-export class QuizPageComponent implements OnInit {
+export class QuizPageComponent implements OnInit, OnDestroy {
   data: Question[] = [];
   activeIndex: number = 0;
   activeQuestion: Question = {
@@ -21,6 +21,7 @@ export class QuizPageComponent implements OnInit {
   disabled: boolean = true;
   isLoading$!: Observable<boolean>;
   error$!: Observable<string>;
+  sub!: Subscription;
 
   constructor(
     public scoreService: ScoreService,
@@ -44,5 +45,9 @@ export class QuizPageComponent implements OnInit {
 
   onScoreClick() {
     this.router.navigate(['/summary']);
+  }
+
+  ngOnDestroy() {
+    this.sub?.unsubscribe();
   }
 }

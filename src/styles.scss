@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+input {
+  margin: 0;
+}
+
 ul[class],
 ol[class] {
   list-style: none;

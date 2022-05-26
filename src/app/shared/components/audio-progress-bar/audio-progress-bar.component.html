@@ -1,0 +1,15 @@
+<div class="progress">
+  <input
+    class="progress-range"
+    [value]="currentRange$ | async"
+    [max]="duration$ | async"
+    type="range"
+    min="0"
+    step="0.1"
+    (change)="onRangeChange($event)"
+  />
+  <div class="progress-time">
+    <span class="progress-time__current">{{ currentTime$ | async }}</span>
+    <span class="progress-time__duration">{{ duration$ | async }}</span>
+  </div>
+</div>

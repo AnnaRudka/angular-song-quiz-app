@@ -41,19 +41,9 @@ describe('QuizQuestionComponent', () => {
     expect(text).toBeTruthy();
   });
 
-  it('should show audio player', () => {
-    const audio = fixture.nativeElement.querySelector('.question__audio-player');
-    expect(audio).toBeTruthy();
-  });
-
   it('should display default block', () => {
     const defaultBLock = fixture.nativeElement.querySelector('.default-block__image');
     expect(defaultBLock).toBeTruthy();
   });
 
-  it('should display default background', () => {
-    const defaultBrg = fixture.debugElement.query(By.css('.question__audio-image--default'));
-
-    expect(defaultBrg.nativeElement).toBeTruthy();
-  });
 });

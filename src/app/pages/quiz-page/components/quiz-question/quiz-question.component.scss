@@ -37,7 +37,7 @@
     margin: 20px 0px;
     padding: 20px;
     display: flex;
-    @media (max-width: 576px) {
+    @media (max-width: 380px) {
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -45,6 +45,7 @@
     }
   }
   &__audio-image {
+    position: relative;
     flex-shrink: 0;
     width: 100px;
     height: 100px;

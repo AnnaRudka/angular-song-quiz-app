@@ -6,7 +6,13 @@
     <img src="{{ apiUrl }}/{{ answer.image }}" alt="{{ answer.name }}" />
   </div>
   <div class="description__audio">
-    <audio controls src="{{ apiUrl }}/{{ answer.audio }}"></audio>
+    <div class="description__audio-btn">
+      <app-toggle-button
+        [isPlayed]="isPlayed"
+        (click)="onToggleClick()"
+      ></app-toggle-button>
+    </div>
+    <app-audio-progress-bar></app-audio-progress-bar>
   </div>
   <p class="description__text">{{ answer.description }}</p>
 </div>

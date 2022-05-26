@@ -1,0 +1,21 @@
+<div class="audio-player">
+  <div
+    class="audio-player__image"
+    [ngClass]="{
+      'audio-player__image--default': !isSuccess
+    }"
+  >
+    <app-toggle-button
+      [isPlayed]="isPlayed"
+      (click)="onToggleClick()"
+    ></app-toggle-button>
+    <div
+      *ngIf="isSuccess"
+      class="audio-player__image"
+      [ngStyle]="{
+        'background-image': 'url(' + apiUrl + '/' + answer.image + ')'
+      }"
+    ></div>
+  </div>
+  <app-audio-progress-bar></app-audio-progress-bar>
+</div>
